@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Box(partb)</title>
+        <style>
+            @media screen and (max-width: 800px) {
+                
+            
+            #box{
+                    height:100px;
+                    width:100px;
+                    position: absolute;
+                    top:50%;
+                    left:50%;
+                    margin:-50px 0 0 -50px;
+                    background-color: rgb(230, 21, 21);
+                    transition: transform 2s ,width 2s;
+
+
+            }
+        
+            #box:hover{
+                width: 300px;
+                -webkit-transform: rotate(90deg);
+                -moz-transform: rotate(90deg);
+                -o-transform: rotate(90deg);
+                transform: rotate(90deg);
+                transform:rorate(90deg) ;
+            }
+        }
+        @media screen and (min-width: 801px){
+            #box{
+                    height:200px;
+                    width:200px;
+                    position: absolute;
+                    top:50%;
+                    left:50%;
+                    margin:-50px 0 0 -50px;
+                    background-color: rgb(230, 21, 21);
+                    transition: transform 2s ,width 2s;
+
+
+            }
+        
+            #box:hover{
+                width: 600px;
+                -webkit-transform: rotate(90deg);
+                -moz-transform: rotate(90deg);
+                -o-transform: rotate(90deg);
+                transform: rotate(90deg);
+                transform:rorate(90deg) ;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+
+        </div>
+    </body>
+</html>

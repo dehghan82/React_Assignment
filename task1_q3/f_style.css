@@ -1,0 +1,70 @@
+.flex{
+    display: flex;
+    width:200px; 
+    text-align: center;
+    flex-direction: row-reverse;
+    
+    flex-wrap:wrap;
+    /* align-content: space-around; */
+    position: absolute;
+    top: 20%;
+    border: solid 1px;
+    row-gap: 30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: end;
+}
+.style{text-align: left;
+    height: 50px;
+    width:50px;
+font-weight: 600;}
+#first{
+    background-color: rgb(184, 184, 245);
+    
+    
+    
+}
+#second{
+    background-color: rgb(157, 157, 194);
+   
+    
+}
+    
+
+#third{
+    background-color: rgb(137, 137, 174);
+
+    
+}   
+#fourth{
+    background-color: rgb(93, 93, 225);
+
+    
+}   
+#fifth{
+    background-color: rgb(63, 63, 159);
+
+    
+}  
+#sixth{
+    background-color: rgb(61, 61, 135);
+
+}
+
+.xx:hover{
+    
+    animation-name:flexanimation;
+    
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    /* animation-timing-function: ease; */
+
+}
+
+
+@keyframes flexanimation {
+    100% {
+        width: 100px;
+    }
+}
+

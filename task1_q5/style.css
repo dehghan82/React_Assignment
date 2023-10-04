@@ -1,0 +1,29 @@
+div{
+    background-color: rgb(223, 223, 223);
+    position: absolute;
+    width:550px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    justify-content: center;
+    padding:10px;
+    
+}
+input, select{
+    
+   
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid ;
+    border-radius: 4px;
+    border-color: rgb(203, 203, 203);
+    
+    
+}
+#sbm{
+    background-color: rgb(41, 194, 30);
+    color: aliceblue;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="header">Calculator</div>
+  <div class="grid">
+    <div id="calc">calculator</div>
+    
+    <div id="show"></div>
+    
+    <!-- <div class="cell" onclick="appendInput('sqrt(')">&#8730;</div> -->
+    <div class="cell" tabindex="0" onclick="appendInput('Math.sqrt(')">√</div>
+    <div class="cell" onclick="appendInput('(')">(</div>
+    <div class="cell" onclick="appendInput(')')">)</div>
+    <div class="cell" onclick="appendInput('%')">%</div>
+    <div class="cell" onclick="appendInput('7')">7</div>
+    <div class="cell" onclick="appendInput('8')">8</div>
+    <div class="cell" onclick="appendInput('9')">9</div>
+    <div class="cell" onclick="appendInput('/')">/</div>
+    <div class="cell" onclick="appendInput('4')">4</div>
+    <div class="cell" onclick="appendInput('5')">5</div>
+    <div class="cell" onclick="appendInput('6')">6</div>
+    <div class="cell" onclick="appendInput('*')">*</div>
+    <div class="cell" onclick="appendInput('1')">1</div>
+    <div class="cell" onclick="appendInput('2')">2</div>
+    <div class="cell" onclick="appendInput('3')">3</div>
+    <div class="cell" onclick="appendInput('-')">-</div>
+    <div class="zero" onclick="appendInput('0')">0</div>
+    <div class="plus" onclick="appendInput('+')">+</div>
+    <div class="cell" onclick="appendInput('.')">.</div>
+    <div class="cell" id="del" onclick="deleteInput()">DEL</div>
+    <div class="equal" onclick="calculate()">=</div>
+  </div>
+
+  <script>
+
+function deleteInput() {//deleting the box items
+      var show = document.getElementById("show");
+      show.innerHTML = show.innerHTML.slice(0, -1);
+      
+    }
+
+    function calculate() {//calculating result
+      var show = document.getElementById("show");
+      var result;
+      
+      try {
+        result = eval(show.innerHTML);
+      } catch (error) {
+        result = "Error";
+      }
+      show.innerHTML = result;
+    } 
+    function appendInput(value) {//adding the keys to show box
+      var show = document.getElementById("show");
+      show.innerHTML += value;
+      
+    }
+
+    const gridCells = document.querySelectorAll('.cell');
+
+    document.addEventListener('keydown', function(event) {//usage of enter and backspace keys and num keys
+  const key = event.key;
+  switch (key) {
+    case 'Enter':
+      calculate();
+      break;
+    case 'Backspace':
+      deleteInput();
+      break;
+    default:
+      if (/\d|[\+\-\*\/\(\)%\.]/.test(key)) {
+        appendInput(key);
+      }
+      break;
+  }
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const gridCells = document.querySelectorAll('.cell');
+  let crnt_cell = 0;
+
+  gridCells[crnt_cell].classList.add('current');
+
+  document.addEventListener('keydown', function(event) {
+    const key = event.key;
+
+    // Remove the current class from the current cell
+    gridCells[crnt_cell].classList.remove('current');
+
+    if(key==='Enter'){
+
+    }
+    // Move left
+    if (key === 'ArrowLeft') {
+      crnt_cell = (crnt_cell - 1 + gridCells.length) % gridCells.length;
+    }
+
+    // Move right
+    if (key === 'ArrowRight') {
+      crnt_cell = (crnt_cell + 1) % gridCells.length;
+    }
+
+    // Move up
+    if (key === 'ArrowUp') {
+      crnt_cell = (crnt_cell - 4 + gridCells.length) % gridCells.length;
+    }
+
+    // Move down
+    if (key === 'ArrowDown') {
+      crnt_cell = (crnt_cell + 4) % gridCells.length;
+    }
+
+    // Add the current class to the new current cell
+    gridCells[crnt_cell].classList.add('current');
+  });
+});
+    
+  </script>
+</body>
+</html>

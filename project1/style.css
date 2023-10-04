@@ -1,0 +1,90 @@
+#header{
+ display: block;
+ text-align: center;
+ /* padding-left: 200px; */
+ /* top:50%;
+ left:50%;
+ transform: translate(-50%,-50%); */
+ font-size:  30px;
+
+}
+.grid{
+    display:grid;
+    /* align-content: start; */
+    height:400px;
+    margin:100px;
+    gap:3px;
+    padding: 5px;
+    background-color:rgb(235, 230, 230) ;
+    grid-template-columns: auto auto auto auto ;
+    grid-template-rows:   auto auto auto auto;
+}
+/* s */
+/* .cell {
+    border: 1px solid #ccc;
+    padding: 8px;
+    transition: box-shadow 1000ms ease-in-out;
+  }
+  
+  
+  .cell:active {
+    
+    box-shadow: 5px 5px 5px 5px #92cfec; }/* Replace #ff0000 with your desired shadow color */
+  /* } */
+  */
+  .cell {
+    border: 1px solid #ccc;
+    padding: 8px;
+
+    transition: box-shadow 0.5s ease-in-out;
+  }
+  
+  .cell:focus,
+  .cell:active{
+    outline: none;
+    box-shadow: 0 0 5px #3872cf; /* Replace #ff0000 with your desired shadow color */
+  }
+.zero{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.grid>.equal{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    background-color: rgb(65, 228, 119);
+}
+#del{
+    background-color: rgb(222, 56, 56);
+}
+.plus{
+    grid-column-start: 4;
+    grid-row-start: 7;
+    grid-row-end: 9;
+}
+.grid > div{
+    background-color: white;
+    text-align: center;
+    
+    padding-top: 20px;}
+.grid>#calc{
+        display: inline;
+        grid-column-start: 1;
+    grid-column-end: 5;
+        background-color: rgb(65, 228, 119);
+
+ }
+.grid>#show{
+    height: 20px;
+    padding-bottom: 2px;
+    padding-top: 0px;
+    text-align: right;
+        display: inline;
+        grid-column-start: 1;
+    grid-column-end: 5;
+        
+    }
+    .cell.current {
+        outline: none;
+    box-shadow: 0 0 5px #3872cf; /* Replace #ff0000 with your desired shadow color */
+      }
